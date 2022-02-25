@@ -8,17 +8,48 @@
       "react-router-dom": "6.2.1"
    },
    "scripts": {
-      "start": "vite",
+      "dev": "vite",
       "build": "vite build",
       "preview": "vite preview",
       "test": "vite test"
    },
    "devDependencies": {
       "@vitejs/plugin-react": "1.2.0",
+      "eslint": "^8.9.0",
+      "eslint-config-standard": "16.0.3",
+      "eslint-plugin-import": "2.25.4",
+      "eslint-plugin-react": "7.29.0",
       "vite": "2.8.4"
    },
    "eslintConfig": {
-      "extends": "react-app"
+      "env": {
+         "browser": true,
+         "es2021": true,
+         "node": true
+      },
+      "extends": [
+         "plugin:react/recommended",
+         "standard"
+      ],
+      "parserOptions": {
+         "ecmaFeatures": {
+            "jsx": true
+         },
+         "ecmaVersion": "latest",
+         "sourceType": "module"
+      },
+      "plugins": [
+         "react"
+      ],
+      "rules": {
+         "react/react-in-jsx-scope": "off",
+         "react/prop-types": "off",
+         "indent": "off",
+         "space-before-function-paren": "off",
+         "no-unused-vars": "warn",
+         "multiline-ternary": "off",
+         "react-in-jsx-scope": "off"
+      }
    },
    "browserslist": {
       "production": [

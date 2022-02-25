@@ -1,0 +1,20 @@
+article {
+   max-width: 320px;
+   width: 100%;
+   min-width: 300px;
+   display: flex;
+   flex-direction: column;
+   border-radius: 10px;
+   background: #e0e0e0;
+   box-shadow: -28px 28px 56px #bebebe, 28px -28px 56px #ffffff;
+}
+.img-container img {
+   width: 100%;
+   border-radius: 10px;
+}
+.img-container {
+   padding: 10px;
+}
+.cocktail-body {
+   padding: 10px;
+}
