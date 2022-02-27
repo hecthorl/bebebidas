@@ -1,7 +1,6 @@
-import { useGlobalContext } from '../../context'
-import Cocktail from '../Cocktail'
-import Loading from '../Loading'
-// import { useGlobalContext } from './../context'
+import Cocktail from 'components/Cocktail'
+import Loading from 'components/Loading'
+import { useGlobalContext } from 'context'
 import './index.css'
 
 const NotMatch = () => (

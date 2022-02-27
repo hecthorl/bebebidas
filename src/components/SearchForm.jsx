@@ -1,17 +1,17 @@
-import { useEffect, useRef } from 'react';
-import { useGlobalContext } from '../context';
+import { useGlobalContext } from 'context'
+import { useEffect, useRef } from 'react'
 
 const SearchForm = () => {
-   const { setSearchTerm } = useGlobalContext();
-   const searchValueRef = useRef('');
+   const { setSearchTerm } = useGlobalContext()
+   const searchValueRef = useRef('')
 
    useEffect(() => {
-      searchValueRef.current.focus();
-   }, []);
+      searchValueRef.current.focus()
+   }, [])
 
    const searchCocktail = () => {
-      setSearchTerm(searchValueRef.current.value);
-   };
+      setSearchTerm(searchValueRef.current.value)
+   }
    return (
       <section className="section search">
          <form
@@ -29,7 +29,7 @@ const SearchForm = () => {
             </div>
          </form>
       </section>
-   );
-};
+   )
+}
 
-export default SearchForm;
+export default SearchForm
