@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 const Error = () => {
    return (
@@ -10,7 +10,7 @@ const Error = () => {
             </Link>
          </div>
       </section>
-   );
-};
+   )
+}
 
-export default Error;
+export default Error

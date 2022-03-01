@@ -10,7 +10,7 @@ const About = () => {
             eaque enim aliquid alias quaerat.
          </p>
       </section>
-   );
-};
+   )
+}
 
-export default About;
+export default About

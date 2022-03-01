@@ -1,12 +1,13 @@
-section {
-   width: 100vw;
-   max-width: 100%;
-}
+/* .cocktail_list-section {
+   padding: 0 10px;
+} */
 
 .cocktails-center {
-   display: flex;
-   flex-direction: column;
-   gap: 20px;
-   width: 100%;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   place-content: center;
+   max-width: 1050px;
    margin: 0 auto;
+   width: 100%;
+   row-gap: 2rem;
 }

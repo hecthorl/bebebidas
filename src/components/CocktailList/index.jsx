@@ -1,6 +1,6 @@
-import Cocktail from 'components/Cocktail'
-import Loading from 'components/Loading'
-import { useGlobalContext } from 'context'
+import { useGlobalContext } from '../../context'
+import Cocktail from '../Cocktail'
+import Loading from '../Loading'
 import './index.css'
 
 const NotMatch = () => (
@@ -13,8 +13,7 @@ const CocktailList = () => {
    if (loading) return <Loading />
    if (!cocktails.length) return <NotMatch />
    return (
-      <section>
-         <h2 className="section-title">cocktails</h2>
+      <section className="cocktail_list-section">
          <div className="cocktails-center">
             {cocktails.map(item => (
                <Cocktail key={item.id} {...item} />

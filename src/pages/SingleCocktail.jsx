@@ -1,20 +1,20 @@
-import Loading from '../components/Loading';
-import { useParams, Link } from 'react-router-dom';
-import { useCallback, useEffect, useState } from 'react';
-const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
+import Loading from '../components/Loading'
+import { useParams, Link } from 'react-router-dom'
+import { useCallback, useEffect, useState } from 'react'
+const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='
 
 const SingleCocktail = () => {
-   const { id } = useParams();
-   const [loading, setLoading] = useState(false);
-   const [cocktail, setCocktail] = useState(null);
+   const { id } = useParams()
+   const [loading, setLoading] = useState(false)
+   const [cocktail, setCocktail] = useState(null)
 
    const getCocktail = useCallback(async () => {
-      setLoading(true);
+      setLoading(true)
       try {
-         const res = await fetch(`${url + id}`);
-         const { drinks } = await res.json();
-         setLoading(false);
-         if (!drinks) return setCocktail(null);
+         const res = await fetch(`${url + id}`)
+         const { drinks } = await res.json()
+         setLoading(false)
+         if (!drinks) return setCocktail(null)
          const {
             strDrink: name,
             strDrinkThumb: image,
@@ -27,7 +27,7 @@ const SingleCocktail = () => {
             strIngredient3,
             strIngredient4,
             strIngredient5,
-         } = drinks[0];
+         } = drinks[0]
          const ingredients = [
             strIngredient1,
             strIngredient2,
@@ -36,7 +36,7 @@ const SingleCocktail = () => {
             strIngredient5,
          ]
             .filter(item => item && item)
-            .join(', ');
+            .join(', ')
          const newCocktail = {
             name,
             category,
@@ -45,19 +45,19 @@ const SingleCocktail = () => {
             info,
             glass,
             instructions,
-         };
-         setCocktail(newCocktail);
+         }
+         setCocktail(newCocktail)
       } catch (err) {
-         setLoading(false);
-         console.log(err);
+         setLoading(false)
+         console.log(err)
       }
-   }, [id]);
+   }, [id])
 
    useEffect(() => {
-      getCocktail();
-   }, [id, getCocktail]);
+      getCocktail()
+   }, [id, getCocktail])
 
-   if (loading) return <Loading />;
+   if (loading) return <Loading />
 
    return (
       <section className="section cocktail-section">
@@ -95,7 +95,7 @@ const SingleCocktail = () => {
             </div>
          </div>
       </section>
-   );
-};
+   )
+}
 
-export default SingleCocktail;
+export default SingleCocktail

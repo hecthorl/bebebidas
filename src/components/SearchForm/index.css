@@ -1,0 +1,29 @@
+.search-container {
+   max-width: 1050px;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 2rem 0;
+}
+.search-container > div {
+   color: rgba(255, 255, 255, 0.8);
+   font-size: larger;
+   margin-bottom: 10px;
+}
+.form-contianer input {
+   border-radius: 999999px;
+   font-size: large;
+   border: 1px solid green;
+   background-color: rgba(0, 0, 0, 0.322);
+   backdrop-filter: blur(7px) saturate(200%);
+   min-height: 25px;
+   color: white;
+   padding: 5px 12px;
+   min-width: 300px;
+}
+
+.form-contianer input:focus {
+   outline: none;
+   border: 1px solid lime;
+}

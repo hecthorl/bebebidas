@@ -1,14 +1,15 @@
-import { Link } from 'react-router-dom';
-import logo from '../logo.svg';
+import { Link } from 'react-router-dom'
+// import logo from '../logo.svg';
+import './index.css'
 
 const Navbar = () => {
    return (
       <nav className="navbar">
-         <div className="nav-center">
-            <Link to="/">
-               Bebebidas
-            </Link>
-         </div>
+         <Link to="/">
+            <img src="/logoCocktail.jpg" className="logo-bb" alt="" />
+            <span>BB-bidas</span>
+         </Link>
+
          <ul className="nav-links">
             <li>
                <Link to="/">Home</Link>
@@ -18,7 +19,7 @@ const Navbar = () => {
             </li>
          </ul>
       </nav>
-   );
-};
+   )
+}
 
-export default Navbar;
+export default Navbar

@@ -1,20 +1,59 @@
+.art-container {
+   margin: 0 auto;
+   padding: 0 10px;
+}
 article {
    max-width: 320px;
    width: 100%;
-   min-width: 300px;
    display: flex;
    flex-direction: column;
-   border-radius: 10px;
-   background: #e0e0e0;
-   box-shadow: -28px 28px 56px #bebebe, 28px -28px 56px #ffffff;
+   backdrop-filter: blur(7px) saturate(200%);
+   background-color: rgba(17, 25, 40, 0.34);
+   border-radius: 12px;
+   border: 1px solid rgba(0, 255, 0, 0.493);
+   overflow: hidden;
 }
 .img-container img {
    width: 100%;
-   border-radius: 10px;
+   border-radius: 12px;
+   border: 1px solid lime;
 }
 .img-container {
-   padding: 10px;
+   padding: 12px;
 }
 .cocktail-body {
-   padding: 10px;
+   color: white;
+}
+.cocktail-body h3 {
+   text-align: center;
+   letter-spacing: 10px;
+   text-decoration: overline;
+   font-style: oblique;
+   font-size: 1.3rem;
+   border-bottom: 1px solid rgba(0, 255, 0, 0.493);
+   padding-bottom: 5px;
+   font-weight: bold;
+}
+
+.cocktail-body > div {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 15px 12px 15px 0;
+}
+.cocktail-body h4,
+p {
+   padding: 0 12px;
+   color: rgb(216, 213, 213);
+   font-size: 1.07rem;
+   line-height: 25px;
+}
+.detail {
+   text-decoration: none;
+   background-color: #2ea44f;
+   transition: opacity 0.3s ease;
+}
+
+.detail:hover {
+   opacity: 0.9;
 }

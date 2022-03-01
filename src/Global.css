@@ -1,0 +1,55 @@
+.btn {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 10px 18px;
+   width: fit-content;
+   color: white;
+   border-radius: 29px;
+}
+::-webkit-scrollbar {
+   width: 10px; /* Mostly for vertical scrollbars */
+   height: 10px; /* Mostly for horizontal scrollbars */
+}
+::-webkit-scrollbar-thumb {
+   background: rgb(226, 130, 5);
+   transition: background-color 0.3s ease;
+   cursor: pointer;
+}
+::-webkit-scrollbar-thumb:hover {
+   background: rgb(202, 118, 7);
+}
+
+::-webkit-scrollbar-track {
+   background: #1800e5b0;
+}
+
+body {
+   height: 100%;
+   background: repeating-radial-gradient(
+         circle,
+         transparent,
+         transparent 3.5em,
+         tomato 3.5em,
+         tomato 4.5em
+      ),
+      repeating-radial-gradient(
+         circle,
+         transparent,
+         transparent 3.5em,
+         dodgerblue 3.5em,
+         dodgerblue 4.5em
+      ),
+      repeating-radial-gradient(
+         circle,
+         transparent,
+         transparent 2.5em,
+         gold 2.5em,
+         gold 2.75em
+      ),
+      rgba(19, 116, 27, 0.815);
+
+   background-blend-mode: multiply;
+   background-size: 10em 10em;
+   background-position: 0 0, 5em 5em, 10em 5em;
+}

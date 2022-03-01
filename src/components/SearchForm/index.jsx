@@ -1,5 +1,6 @@
-import { useGlobalContext } from 'context'
 import { useEffect, useRef } from 'react'
+import { useGlobalContext } from '../../context'
+import './index.css'
 
 const SearchForm = () => {
    const { setSearchTerm } = useGlobalContext()
@@ -13,16 +14,15 @@ const SearchForm = () => {
       setSearchTerm(searchValueRef.current.value)
    }
    return (
-      <section className="section search">
+      <section className="search-container">
+         <div>Search for your Drink!</div>
          <form
             className="search-form"
             onSubmit={event => event.preventDefault()}
          >
-            <div className="form-control">
-               <label htmlFor="name">Search your favorite cocktail</label>
+            <div className="form-contianer">
                <input
                   type="text"
-                  name="name"
                   onChange={searchCocktail}
                   ref={searchValueRef}
                />
