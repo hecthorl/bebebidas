@@ -1,6 +1,7 @@
 .navbar {
    max-width: 1050px;
-   margin: 10px auto;
+   width: 100%;
+   margin: 0 auto;
    border: 1px solid lime;
    border-radius: 15px;
    backdrop-filter: blur(7px) saturate(200%);

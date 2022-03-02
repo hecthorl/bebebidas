@@ -15,7 +15,7 @@ const CocktailList = () => {
    return (
       <section className="cocktail_list-section">
          <div className="cocktails-center">
-            {cocktails.map(item => (
+            {cocktails.map((item) => (
                <Cocktail key={item.id} {...item} />
             ))}
          </div>

@@ -1,20 +1,39 @@
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Tilt from 'react-parallax-tilt'
 import './index.css'
 
-export default function Cocktail({
-   image,
-   name,
-   id,
-   alcohol,
-   glass,
-   category,
-}) {
+export default function Cocktail(props) {
+   const { image, name, id, category, glass, alcohol } = props
+
+   const cocktailRef = useRef(null)
+
+   useEffect(() => {
+      const observer = new IntersectionObserver((e) => {
+         e[0].target.style.display = 'none'
+         if (e[0].isIntersecting) {
+            e[0].target.style.display = 'block'
+            // console.log(e[0])
+         }
+      })
+      if (cocktailRef.current) {
+         observer.observe(cocktailRef.current)
+      }
+      return () => {
+         observer.unobserve(cocktailRef.current)
+      }
+   }, [])
+
    return (
       <div className="art-container">
          <article>
             <Tilt scale={1} transitionSpeed={200} className="img-container">
-               <img src={image} alt={name} loading="lazy" />
+               <img
+                  ref={cocktailRef}
+                  alt={`Drink ${name}`}
+                  loading="lazy"
+                  src={image}
+               />
             </Tilt>
             <div className="cocktail-body">
                <h3>{name}</h3>

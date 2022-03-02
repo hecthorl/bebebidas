@@ -7,7 +7,7 @@
       "react-dom": "17.0.2",
       "react-parallax-tilt": "1.6.1",
       "react-router-dom": "6.2.1",
-      "react-tilt": "0.1.4"
+      "swr": "1.2.2"
    },
    "scripts": {
       "dev": "vite",
@@ -17,10 +17,12 @@
    },
    "devDependencies": {
       "@vitejs/plugin-react": "1.2.0",
-      "eslint": "8.9.0",
+      "eslint": "7.32.0",
       "eslint-config-standard": "16.0.3",
       "eslint-plugin-import": "2.25.4",
-      "eslint-plugin-react": "7.29.0",
+      "eslint-plugin-node": "11.1.0",
+      "eslint-plugin-promise": "5.2.0",
+      "eslint-plugin-react": "7.29.2",
       "vite": "2.8.4"
    },
    "eslintConfig": {
@@ -30,6 +32,7 @@
          "node": true
       },
       "extends": [
+         "plugin:react/recommended",
          "standard"
       ],
       "parserOptions": {
@@ -48,15 +51,21 @@
          "indent": "off",
          "space-before-function-paren": "off",
          "no-unused-vars": "warn",
-         "multiline-ternary": "off",
-         "react-in-jsx-scope": "off"
+         "multiline-ternary": "off"
       }
+   },
+   "prettier": {
+      "trailingComma": "none",
+      "semi": false,
+      "singleQuote": true,
+      "tabWidth": 3
    },
    "browserslist": {
       "production": [
          ">0.2%",
          "not dead",
-         "not op_mini all"
+         "not op_mini all",
+         "not IE 11"
       ],
       "development": [
          "last 1 chrome version",
