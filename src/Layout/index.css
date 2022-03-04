@@ -55,7 +55,7 @@
 } */
 .layout {
    min-height: 100vh;
-   padding: 1.5rem 0;
+   padding: 1.5rem 1rem;
    display: flex;
    flex-direction: column;
 }
