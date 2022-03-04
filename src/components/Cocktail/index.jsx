@@ -35,6 +35,7 @@ export default function Cocktail({
       <div className="art-container">
          <article>
             <Tilt
+               // ref={cocktailRef}
                scale={1}
                transitionSpeed={200}
                className="img-container"
