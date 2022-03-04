@@ -30,7 +30,7 @@ export default function Cocktail({
    //       }
    //    }
    // }, [])
-
+   // console.log(value)
    return (
       <div className="art-container">
          <article>
@@ -41,13 +41,16 @@ export default function Cocktail({
                className="img-container"
                tiltEnable={!value}
             >
-               <img
-                  // ref={cocktailRef}
-                  alt={`Drink ${name}`}
-                  loading="lazy"
-                  src={image}
-                  onLoad={setValue.off}
-               />
+               <div className="img-wrapper">
+                  <img
+                     // ref={cocktailRef}
+                     width="100%"
+                     alt={`Drink ${name}`}
+                     loading="lazy"
+                     src={image}
+                     onLoad={setValue.off}
+                  />
+               </div>
                {value && (
                   <div id="ab">
                      <div />
