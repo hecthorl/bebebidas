@@ -1,15 +1,28 @@
 .single-cocktail_container {
    max-width: 1050px;
    margin: 0 auto;
-   display: grid;
-   grid-template-columns: 1fr 1fr;
+   display: flex;
+   gap: 2rem;
    margin-top: 3rem;
+   flex-direction: column;
 }
+
+@media (min-width: 1000px) {
+   .single-cocktail_container {
+      flex-direction: row;
+   }
+}
+
 .single-cocktail_container > img {
-   width: 500px;
+   width: 100%;
    border: 1px solid lime;
    border-radius: 12px;
+   flex: 1;
+   max-width: 500px;
+   object-fit: cover;
+   margin: 0 auto;
 }
+
 .drink-info {
    display: flex;
    flex-direction: column;
@@ -19,6 +32,9 @@
    color: white;
    position: relative;
    overflow: hidden;
+   width: fit-content;
+   margin: 0 auto;
+   padding: 1rem 0;
 }
 
 .drink-info > h3 {
@@ -36,6 +52,8 @@
    flex-direction: column;
    justify-content: space-evenly;
    padding: 0 1rem;
+   max-width: 500px;
+   gap: 1rem;
 }
 
 .drink-info p {
