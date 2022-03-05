@@ -57,8 +57,16 @@
 }
 
 .drink-info p {
-   font-size: 2rem;
+   font-size: 1.6rem;
+   transition: font-size 0.2s ease;
 }
+
+@media (min-width: 600px) {
+   .drink-info p {
+      font-size: 2rem;
+   }
+}
+
 .drink-data {
    opacity: 0.8;
 }
