@@ -1,4 +1,5 @@
-import { useGlobalContext } from '../../context'
+import useSWR from 'swr'
+import getCocktails from '../../services/getCocktails'
 import Cocktail from '../Cocktail'
 import Loading from '../Loading'
 
@@ -9,10 +10,10 @@ const NotMatch = () => (
 )
 
 const CocktailList = () => {
-   const { loading, cocktails } = useGlobalContext()
+   const { data: cocktails, error } = useSWR(' ', getCocktails)
 
-   if (loading) return <Loading />
-   if (!cocktails.length) return <NotMatch />
+   if (error) return <NotMatch />
+   if (!cocktails) return <Loading />
    return (
       <section className="cocktail_list-section">
          <div className="cocktails-center">

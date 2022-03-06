@@ -1,5 +1,10 @@
-import { useState, useContext, useEffect, createContext } from 'react'
-import { useCallback } from 'react'
+import {
+   useState,
+   useContext,
+   useEffect,
+   createContext,
+   useCallback
+} from 'react'
 
 const AppContext = createContext()
 export const useGlobalContext = () => useContext(AppContext)
@@ -20,19 +25,19 @@ const AppProvider = ({ children }) => {
             setLoading(false)
             return
          }
-         const newCocktails = drinks.map(item => {
+         const newCocktails = drinks.map((item) => {
             const {
                idDrink,
                strDrink,
                strDrinkThumb,
                strAlcoholic,
                strGlass,
-               strCategory,
+               strCategory
             } = item
             const drinks = {
                Alcoholic: '🚩 Yes',
                'Non alcoholic': '🏳️ No',
-               'Optional alcohol': '❔ Optional',
+               'Optional alcohol': '❔ Optional'
             }
             const isAlcoholic = drinks[strAlcoholic]
             return {
@@ -41,7 +46,7 @@ const AppProvider = ({ children }) => {
                image: strDrinkThumb,
                alcohol: isAlcoholic,
                glass: strGlass,
-               category: strCategory,
+               category: strCategory
             }
          })
          setLoading(false)
