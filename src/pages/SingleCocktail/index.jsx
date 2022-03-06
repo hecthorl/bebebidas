@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import useSWR from 'swr'
+import Image from '../../components/Image'
 import Loading from '../../components/Loading'
 import getCocktail from '../../services/getCocktail'
 import './index.css'
@@ -12,8 +13,9 @@ const SingleCocktail = () => {
 
    return (
       <section className="single-cocktail_container">
-         <img src={cocktail.image} alt={cocktail.name} />
-
+         <div className="single-cocktail_img">
+            <Image src={cocktail.image} altName={cocktail.name} />
+         </div>
          <div className="drink-info">
             <h3>{cocktail.name}</h3>
             <div>

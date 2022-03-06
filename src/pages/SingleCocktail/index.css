@@ -13,13 +13,11 @@
    }
 }
 
-.single-cocktail_container > img {
-   width: 100%;
-   border: 1px solid lime;
-   border-radius: 12px;
-   flex: 1;
+.single-cocktail_img {
+   position: relative;
+   min-height: 500px;
    max-width: 500px;
-   object-fit: cover;
+   width: 100%;
    margin: 0 auto;
 }
 

@@ -20,17 +20,9 @@ export default function Image({ altName, src }) {
                {value && (
                   <motion.div
                      id="ab"
-                     initial={{
-                        opacity: 1,
-                        translateY: 0
-                     }}
-                     transition={{
-                        duration: 0.5
-                     }}
-                     exit={{
-                        opacity: 0,
-                        translateY: -100
-                     }}
+                     initial={{ opacity: 1, translateY: 0 }}
+                     transition={{ duration: 0.5 }}
+                     exit={{ opacity: 0, translateY: -100 }}
                   >
                      <div />
                   </motion.div>
