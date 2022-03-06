@@ -1,8 +1,8 @@
 // import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Tilt from 'react-parallax-tilt'
-import useBoolean from '../../hooks/useBoolean'
 import './index.css'
+import Image from '../Image'
 
 export default function Cocktail({
    image,
@@ -13,7 +13,6 @@ export default function Cocktail({
    alcohol
 }) {
    // const cocktailRef = useRef(null)
-   const [value, setValue] = useBoolean(true)
 
    // useEffect(() => {
    //    const observer = new IntersectionObserver((e) => {
@@ -39,23 +38,9 @@ export default function Cocktail({
                scale={1}
                transitionSpeed={200}
                className="img-container"
-               tiltEnable={!value}
+               tiltEnable={() => setTimeout(() => true, 1000)}
             >
-               <div className="img-wrapper">
-                  <img
-                     // ref={cocktailRef}
-                     width="100%"
-                     alt={`Drink ${name}`}
-                     loading="lazy"
-                     src={image}
-                     onLoad={setValue.off}
-                  />
-               </div>
-               {value && (
-                  <div id="ab">
-                     <div />
-                  </div>
-               )}
+               <Image altName={name} src={image} />
             </Tilt>
 
             <div className="cocktail-body">
