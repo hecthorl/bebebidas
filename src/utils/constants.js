@@ -1,2 +1,1 @@
-export const BASE_URI =
-   'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='
+export const BASE_URI = 'https://www.thecocktaildb.com/api/json/v1/1'

@@ -38,7 +38,6 @@ export default function Cocktail({
                scale={1}
                transitionSpeed={200}
                className="img-container"
-               tiltEnable={() => setTimeout(() => true, 1000)}
             >
                <Image altName={name} src={image} />
             </Tilt>

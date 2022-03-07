@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { useGlobalContext } from '../../context'
+import useBoolean from '../../hooks/useBoolean'
 import Autocomplete from '../Autocomplete'
 
 import './index.css'
@@ -7,13 +8,19 @@ import './index.css'
 const SearchForm = () => {
    const { setSearchTerm } = useGlobalContext()
    const searchValueRef = useRef('')
+   const [flag, setFlag] = useBoolean()
 
    useEffect(() => {
       searchValueRef.current.focus()
+      document.body.addEventListener('click', setFlag.off)
+
+      return () => document.body.removeEventListener('click', setFlag.off)
    }, [])
 
    const searchCocktail = () => {
       setSearchTerm(searchValueRef.current.value)
+      setFlag.on()
+      if (searchValueRef.current.value === '') setFlag.off()
    }
 
    return (
@@ -24,7 +31,7 @@ const SearchForm = () => {
             onSubmit={(event) => event.preventDefault()}
          >
             <input type="text" onChange={searchCocktail} ref={searchValueRef} />
-            {searchValueRef.current.value && (
+            {flag && (
                <ul className="drink-search-container">
                   <Autocomplete track={searchValueRef.current.value} />
                </ul>

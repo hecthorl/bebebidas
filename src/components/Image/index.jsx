@@ -21,7 +21,7 @@ export default function Image({ altName, src }) {
                   <motion.div
                      id="ab"
                      initial={{ opacity: 1, translateY: 0 }}
-                     transition={{ duration: 0.5 }}
+                     // transition={{ duration: 0.5 }}
                      exit={{ opacity: 0, translateY: -100 }}
                   >
                      <div />
